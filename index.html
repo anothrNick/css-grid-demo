@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>CSS Grid</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+          * {
+            box-sizing: border-box;
+            margin: 0;
+          }
+          body {
+            font-family: 'Open Sans','Helvetica',Helvetica,Arial,sans-serif;
+          }
+          .container {
+            min-height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 200px repeat(11, 1fr);
+            grid-template-rows: 50px 1fr 30px;
+            grid-gap: 0px;
+            grid-template-areas:
+                "h h h h h h h h h h h h"
+                "m c c c c c c c c c c c"
+                "m f f f f f f f f f f f";
+          }
+
+          .minimize .container {
+            grid-template-columns: 50px repeat(11, 1fr);
+            grid-template-rows: 50px 1fr 30px;
+          }
+
+          /* header */
+          .header {
+            grid-area: h;
+            background-color: #2980b9;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            padding: 5px 0px;
+          }
+          .header h2 {
+            font-weight: 300;
+            padding: 0 10px;
+            width: 200px;
+            margin-right: 5px;
+          }          
+          .header span {
+            padding: 0 10px;
+          }
+
+          /* sidebar */
+          .sidebar {
+            grid-area: m;
+            background-color: #FFF;
+          }
+
+          /* content */
+          .content {
+            grid-area: c;
+            background-color: #F5F5F5;
+            padding: 15px;
+          }
+
+          /* footer */
+          .footer {
+            grid-area: f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #EEE;
+            font-size: 14px;
+            color: #586069;
+          }
+
+          /* utility */
+          .pull-right {
+            float: right;
+            margin-left: auto;
+          }
+        </style>
+    </head>
+    <body class="">
+      <div class="container">
+        <div class="header">
+          <h2>Header</h2>
+          <span>menu</span>
+          <span class="pull-right">user</span>
+        </div>
+        <div class="sidebar">
+          
+        </div>
+        <div class="content">
+          <p>Content</p>
+        </div>
+        <div class="footer">
+          <p>&copy; 2017 footer</p>
+        </div>
+      </div>
+    </body>
+</html>
